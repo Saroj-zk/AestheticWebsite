@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 50px 0;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 30px;
+      background-color: #2b2862;
+      color: white;
+    }
+
+    .header h1 {
+      font-size: 36px;
+    }
+
+    .header p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    section {
+      width: 80%;
+      max-width: 1100px;
+      margin-bottom: 40px;
+    }
+
+    section h2 {
+      font-size: 30px;
+      color: #2b2862;
+      margin-bottom: 20px;
+    }
+
+    section p {
+      font-size: 16px;
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+
+    /* About Me */
+    #about-me {
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0px 16px 15px -10px rgba(105, 96, 215, 0.09);
+      border-radius: 10px;
+    }
+
+    /* Key Skills */
+    #key-skills {
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0px 16px 15px -10px rgba(105, 96, 215, 0.09);
+      border-radius: 10px;
+    }
+
+    #key-skills ul {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 20px;
+      list-style-type: disc;
+      padding: 20px;
+    }
+
+    #key-skills ul li {
+      font-size: 16px;
+    }
+
+    /* Key Achievements */
+    #key-achievements {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .achievement-card {
+   background-color: #fff;
+   width: 100%; /* Change width to 100% to make the cards fit in the layout */
+   padding: 20px;
+   box-shadow: 0px 16px 15px -10px rgba(105, 96, 215, 0.09);
+   border-radius: 10px;
+ }
+
+    .achievement-card h4 {
+      font-size: 18px;
+      color: #2b2862;
+    }
+
+    .achievement-card p {
+      font-size: 16px;
+      color: #333;
+    }
+
+    /* Experience */
+    .timeline {
+      width: 100%;
+      background: rgba(236, 241, 245, 0.15);
+      backdrop-filter: blur(15px);
+      position: relative;
+      box-shadow: 0px 20px 53px -30px rgba(95, 102, 173, 0.57);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .timeline h3 {
+      font-weight: bold;
+      font-size: 24px;
+      color: #2b2862;
+      margin-bottom: 15px;
+    }
+
+    .timeline .container {
+        width:100%;
+      height:155px;
+      display:flex;
+    }
+
+    .lines {
+      margin-right: 20px;
+      position: relative;
+    }
+
+    .lines .dot {
+        width:14px;
+          height:14px;
+background: #D1D6E6;
+          border-radius:50px;
+    }
+
+    .lines .line {
+        height: 100px;
+          width:2px;
+          background: #D1D6E6;
+          margin-left:5.7px;
+    }
+
+    .cards {
+      flex-grow: 5;
+    }
+
+    .cards .card {
+      background: #fff;
+      box-shadow: 0px 16px 15px -10px rgba(105, 96, 215, 0.09);
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 0px;
+          }
+
+    .cards .card h4 {
+      font-size: 18px;
+      color: #2b2862;
+      margin-bottom: -2px;
+    }
+
+    .cards .card p {
+      font-size: 15px;
+      color: #333;
+    }
+
+    /* Education */
+    #education {
+      width: 100%;
+      background-color: #fff;
+      padding: 30px;
+      box-shadow: 0px 16px 15px -10px rgba(105, 96, 215, 0.09);
+      border-radius: 10px;
+    }
+
+    #education h2 {
+      margin-bottom: 20px;
+    }
+
+   /* .education-card {
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      margin-bottom: 20px;
+      box-shadow: 0px 16px 15px -10px rgba(105, 96, 215, 0.09);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .education-card h4 {
+      font-size: 18px;
+      color: #2b2862;
+      margin-bottom: 10px;
+    }
+
+    .education-card p {
+      font-size: 16px;
+      color: #333;
+    } */
+
+    .education-item {
+   margin-bottom: 20px;
+}
+
+.institution-name {
+   font-size: 18px;
+   font-weight: bold;
+   margin-bottom: 5px;
+}
+
+.course-name {
+   font-size: 16px;
+   margin-bottom: 3px;
+}
+
+.education-duration {
+   font-size: 14px;
+   color: #811b1b;
+}
+
+.footer {
+    background-color: #f4f4f4;
+    padding: 20px 0;
+    text-align: center;
+    color: #333;
+}
+
+.quote {
+    font-size: 20px;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.contact-text {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+     /* Project Section */
+     #projects {
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0px 16px 15px -10px rgba(105, 96, 215, 0.09);
+      border-radius: 10px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 20px;
+    }
+
+    .project-card {
+      background-color: #fff;
+      position: relative;
+      height: 200px;
+      box-shadow: 0px 16px 15px -10px rgba(105, 96, 215, 0.09);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: scale(1.05);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .project-title {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      text-align: center;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="main">
+  
+  <!-- Header Section -->
+  <div class="header">
+    <h1>My Portfolio</h1>
+    <p>A Journey Through My Skills, Achievements, and Experience</p>
+  </div>
+
+  <!-- About Me Section -->
+  <section id="about-me">
+    <h2>About Me</h2>
+    <p>I am an experienced Game Developer, Research Analyst, and Blockchain expert with over 6 years of experience in AI, complex network systems, data analysis, and product strategy. I’ve led projects for some of the largest blockchain gaming platforms, collaborated with major companies, and managed high-profile teams across different industries.</p>
+  </section>
+
+  <!-- Key Skills Section -->
+  <section id="key-skills">
+    <h2>Key Skills</h2>
+    <ul>
+      <li>Game Design & Development</li>
+      <li>Blockchain Integration</li>
+      <li>Market Research & Analysis</li>
+      <li>Product Strategy & Roadmapping</li>
+      <li>Stakeholder Management</li>
+   <li>Sales Strategy & Negotiation</li>
+      <li>Competitive Analysis</li>
+      <li>Cross-functional Collaboration</li>
+      <li>Partnership Development</li>
+      <li>Wireframes & Prototypes</li>
+      <li>Project Management</li>
+      <li>Community Management</li>
+         </ul>
+  </section>
+
+  <!-- Experience Timeline Section -->
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="timeline">
+      <div class="container">
+        <div class="lines">
+          <div class="dot"></div>
+          <div class="line"></div>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <h4>Senior Analyst at GuardianLink - 2022</h4>
+            <p>Managed multiple blockchain projects like Meta Cricket League and RADDX, raising $25M for Jump.trade and $8M for DePIN project.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="lines">
+          <div class="dot"></div>
+          <div class="line"></div>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <h4>Head of Research at Straive-Wiley - 2020</h4>
+            <p>Led a team of 10 researchers and generated $9.4M in revenue through strategic research initiatives.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="lines">
+          <div class="dot"></div>
+          <div class="line"></div>
+          <div class="dot"></div>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <h4>Game Developer at VR Chennai - 2021</h4>
+            <p>Developed innovative games for various platforms.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+     <!-- Key Achievements Section -->
+     <section id="key-achievements">
+        <h2>Key Achievements</h2>
+        <div class="achievement-card">
+          <h4>$25M Raised for Jump.trade</h4>
+          <p>Led strategic planning and fundraising, raising $25M in funding for a major NFT marketplace.</p>
+        </div>
+        <div class="achievement-card">
+          <h4>Designed Asia’s Largest NFT Marketplace</h4>
+          <p>Created and launched Asia’s largest NFT marketplace, generating over $1.2M in revenue through successful NFT drops.</p>
+        </div>
+        <div class="achievement-card">
+          <h4>Collaboration with Major Companies</h4>
+          <p>Partnered with companies like Flipkart, Polygon, and Casper to deliver successful blockchain-based projects.</p>
+        </div>
+        <div class="achievement-card">
+          <h4>Incorporated ChatGPT into Game Mechanics</h4>
+          <p>Integrated ChatGPT into RADDX for real-time commentary, enhancing the user experience.</p>
+        </div>
+      </section>
+
+       <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+        <a href="https://raddx.jump.trade/" target="_blank">
+            <div class="project-card">
+               <img src="img.jpeg" alt="Project 1 Thumbnail">
+               <div class="project-title">RADDX RACING METAVERSE</div>
+            </div>
+          </a>
+          <a href="project1-link.html" target="_blank">
+            <div class="project-card">
+               <img src="project1-thumbnail.jpg" alt="Project 1 Thumbnail">
+               <div class="project-title">META CRICKET LEAGUE</div>
+            </div>
+          </a>
+          <a href="project1-link.html" target="_blank">
+            <div class="project-card">
+               <img src="project1-thumbnail.jpg" alt="Project 1 Thumbnail">
+               <div class="project-title">JUMP TRADE</div>
+            </div>
+          </a>
+          <a href="project1-link.html" target="_blank">
+            <div class="project-card">
+               <img src="project1-thumbnail.jpg" alt="Project 1 Thumbnail">
+               <div class="project-title">TORNADO MASTER</div>
+            </div>
+          </a>
+    </div>
+  </section>
+
+       <!-- Education Section -->
+  <section id="education">
+    <h2>Education</h2>
+            <div class="education-item">
+            <h3 class="institution-name">Tagore Engineering College</h3>
+            <p class="course-name">Bachelor of Engineering in Computer Science</p>
+            <span class="education-duration">2010 - 2014</span>
+         </div>
+         <div class="education-item">
+            <h3 class="institution-name">Marians High School</h3>
+            <p class="course-name">Computer Science</p>
+            <span class="education-duration">2012 - 2014</span>
+         </div>
+         
+   <!-- <div class="education-card">
+      <h4>HSC in Computer Science</h4>
+      <b></b><p>Marians High School, 2012 - Scored 78%</p>
+    </div>  -->
+  </section>
+  <footer class="footer">
+    <blockquote class="quote">
+        "The only way to do great work is to love what you do." - Steve Jobs
+    </blockquote>
+    <p class="contact-text">Get in touch and let's get started!</p>
+    <div class="social-icons">
+        <a href="https://twitter.com/yourprofile" target="_blank">
+            <img src="twitter-icon.png" alt="Twitter">
+        </a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">
+            <img src="linkedin-icon.png" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/yourprofile" target="_blank">
+            <img src="github-icon.png" alt="GitHub">
+        </a>
+        <a href="https://www.instagram.com/yourprofile" target="_blank">
+            <img src="instagram-icon.png" alt="Instagram">
+        </a>
+    </div>
+</footer>
+
+
+  </div>
+</div>
+
+</body>
+</html>
