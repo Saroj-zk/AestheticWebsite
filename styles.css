@@ -1032,7 +1032,7 @@ code {
 
   /* Key Achievements Section */
 .achievements-section {
-  background-image: url('bg2.jpg');
+  background-image: url('.jpg');
   background-size: cover;
   padding: 80px 0;
   text-align: center;
